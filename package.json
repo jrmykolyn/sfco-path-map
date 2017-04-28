@@ -17,6 +17,7 @@
   "author": "Jesse R Mykolyn",
   "license": "ISC",
   "devDependencies": {
+    "eslint": "^3.19.0",
     "jasmine": "^2.6.0"
   }
 }
