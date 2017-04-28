@@ -1,5 +1,5 @@
 {
-  "name": "path-map",
+  "name": "sfco-path-map",
   "version": "0.1.0",
   "description": "PathMap reduces redundancy when declaring path and configuration objects.",
   "main": "path-map.js",
@@ -8,12 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jrmykolyn/path-map.git"
+    "url": "git+https://github.com/jrmykolyn/sfco-path-map.git"
   },
   "bugs": {
-    "url": "https://github.com/jrmykolyn/path-map/issues"
+    "url": "https://github.com/jrmykolyn/sfco-path-map/issues"
   },
-  "homepage": "https://github.com/jrmykolyn/path-map#readme",
+  "homepage": "https://github.com/jrmykolyn/sfco-path-map#readme",
   "author": "Jesse R Mykolyn",
   "license": "ISC",
   "devDependencies": {
