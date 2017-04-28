@@ -10,7 +10,13 @@ class PathMap {
 		paths = ( typeof paths === 'object' ) ? paths : {};
 
 		for ( let path in paths ) {
-			this[ path ] = this.parsePath( paths[ path ] );
+			let val = paths[ path ];
+
+			if ( typeof val === 'string' ) {
+				this[ path ] = this.parsePath( val );
+			} else {
+				throw new Error( `RECEIVED A VALUE OF TYPE ${ typeof val } FOR ${ path }.` );
+			}
 		}
 	}
 
