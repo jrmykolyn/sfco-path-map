@@ -1,3 +1,10 @@
+/* global
+	console
+	describe
+	it
+	expect
+*/
+
 const PathMap = require( '../path-map' );
 
 describe( 'Test `PathMap`:', () => {
@@ -36,6 +43,8 @@ describe( 'Test `PathMap`:', () => {
 				path3: '__path1__/path-3',
 				path4: true
 			} );
+
+			PATHS.path5 = 'Hello, world!'; /// NOTE - Additional assignment included to prevent ESLint "assigned but not used" flag.
 		} catch ( err ) {
 			expect( err instanceof Error ).toBe( true );
 		}
