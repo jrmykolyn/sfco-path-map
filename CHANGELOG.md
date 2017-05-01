@@ -4,9 +4,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [Unreleased]
+## [0.2.0] - 2017-04-30
+### Added
+- Added Typescript compiler and configuration file to project.
+- Added `lib/` dir. in project root (contains compiled module, declaration file, and source map.)
+- Added `build` script to `package.json`. Script runs Typescript `tsc` command with no additional arguments/options.
+
 ### Changed
 - Updated `README` file with installation and usage instructions.
+- Converted existing `PathMap` class definition to Typescript, moved to `src/` dir.
 
 ## [0.1.1] - 2017-04-28
 ### Changed
