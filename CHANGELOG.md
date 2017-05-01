@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.4.0] - 2017-05-01
+### Changed
+- Fixed broken file path in 'path-map.spec.js'.
+- Updated `PathMap` to support `Array<string>` input.
+
+### Added
+- Added test coverage for: `Array<string>` input; accessing `PathMap` instance props using `[]` notation; using `{{...}}` characters to indicate placeholder values.
+
 ## [0.3.1] - 2017-05-01
 ### Changed
 - Regenerated `path-map.js` and `path-map.js.map` files (missing from `0.3.0` update).
