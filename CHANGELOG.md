@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.4.1] - 2017-05-01
+### Changed
+- Updated `README` file to include notes re: support of `Array<string>` input.
+
 ## [0.4.0] - 2017-05-01
 ### Changed
 - Fixed broken file path in 'path-map.spec.js'.
