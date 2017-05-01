@@ -4,7 +4,8 @@
   "description": "PathMap reduces redundancy when declaring path and configuration objects.",
   "main": "lib/path-map.js",
   "scripts": {
-    "test": "jasmine"
+    "test": "jasmine",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
