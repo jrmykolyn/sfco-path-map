@@ -5,7 +5,7 @@
 	expect
 */
 
-const PathMap = require( '../path-map' );
+const PathMap = require( '../lib/path-map' );
 
 describe( 'Test `PathMap`:', () => {
 	it( 'Should accept a configuration object with a single, "fully defined" path.', () => {
