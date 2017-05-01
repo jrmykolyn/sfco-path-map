@@ -1,0 +1,13 @@
+{
+	"compilerOptions": {
+		"declaration": true,
+		"outDir": "lib",
+		"sourceMap": true,
+		"removeComments": false,
+		"module": "commonjs",
+		"target": "ES5"
+	},
+	"include": [
+		"src"
+	]
+}
