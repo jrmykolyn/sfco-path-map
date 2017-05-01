@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.3.1] - 2017-05-01
+### Changed
+- Regenerated `path-map.js` and `path-map.js.map` files (missing from `0.3.0` update).
+
 ## [0.3.0] - 2017-05-01
 ### Changed
 - Updated `PathMap` to support `{{...}}` characters when indicated placeholder portion of file path(s).
