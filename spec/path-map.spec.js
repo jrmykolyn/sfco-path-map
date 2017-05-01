@@ -53,7 +53,7 @@ describe( 'Test `PathMap`:', () => {
 		expect( PATHS.path3 ).toBe( './path-1/path-3' );
 	} );
 
-	it ( 'Should throw an error if the value for a given path is not of type "string"', () => {
+	it( 'Should throw an error if the value for a given path is not of type "string"', () => {
 		try {
 			const PATHS = new PathMap( {
 				path1: './path-1',
@@ -66,5 +66,30 @@ describe( 'Test `PathMap`:', () => {
 		} catch ( err ) {
 			expect( err instanceof Error ).toBe( true );
 		}
+	} );
+
+	it( 'It should *not* throw an error if the value for a given path is of type Array<string>.', () => {
+		const PATHS = new PathMap( {
+			path1: './path-1',
+			path2: [
+				'array-path-1',
+				'array-path-2'
+			]
+		} );
+
+		expect( Array.isArray( PATHS.path2 ) ).toBe( true );
+	} );
+
+	it( 'It should correctly replace placeholder values within an array of strings.', () => {
+		const PATHS = new PathMap( {
+			projectRoot: 'path/to/project',
+			scriptsSrc: [
+				'{{projectRoot}}/js/src/*.js',
+				'!{{projectRoot}}/js/src/ignore-me.js'
+			],
+			scriptsDest: '{{projectRoot}}/js/src/',
+		} );
+
+		expect( PATHS.scriptsSrc[ 0 ] ).toBe( 'path/to/project/js/src/*.js' );
 	} );
 } );
