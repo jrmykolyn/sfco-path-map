@@ -25,11 +25,29 @@ describe( 'Test `PathMap`:', () => {
 		expect( PATHS.path2 ).toBe( './path-2' );
 	} );
 
+	it( 'Should allow `PathMap` instance properties to be accessed using `[]` notation.', () => {
+		const PATHS = new PathMap( {
+			path1: './path-1'
+		} );
+
+		expect( PATHS[ 'path1' ] ).toBe( './path-1' );
+	} );
+
 	it( 'Should accept a configuration object which contains a mix of "fully defined" and "partially defined" paths.', () => {
 		const PATHS = new PathMap( {
 			path1: './path-1',
 			path2: './path-2',
 			path3: '__path1__/path-3'
+		} );
+
+		expect( PATHS.path3 ).toBe( './path-1/path-3' );
+	} );
+
+	it( 'Should support the use of `{{...}}` characters to indicate "placeholder" portions of a given path.', () => {
+		const PATHS = new PathMap( {
+			path1: './path-1',
+			path2: './path-2',
+			path3: '{{path1}}/path-3'
 		} );
 
 		expect( PATHS.path3 ).toBe( './path-1/path-3' );
