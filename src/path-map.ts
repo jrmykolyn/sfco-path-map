@@ -12,8 +12,17 @@ class PathMap {
 		for ( let path in paths ) {
 			let val = paths[ path ];
 
-			if ( typeof val === 'string' ) {
-				this[ path ] = this.parsePath( val );
+			if ( typeof val === 'string' || Array.isArray( val ) ) {
+				let isArr = Array.isArray( val );
+
+				// Re-assign `val` to ensure that it's an array.
+				val = ( val && typeof val === 'string' ) ? [ val ] : val
+
+				// Parse each string within the `val` array.
+				val = val.map( ( v ) => { return this.parsePath( v ) } );
+
+				// Update `PathMap` instance with either array or string (depending on type of original input).
+				this[ path ] = ( isArr ) ? val : val[ 0 ];
 			} else {
 				throw new Error( `RECEIVED A VALUE OF TYPE ${ typeof val } FOR ${ path }.` );
 			}
