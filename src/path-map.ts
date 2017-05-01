@@ -2,7 +2,7 @@
 class PathMap {
 	// Class methods.
 	static get pattern() {
-		return /__(.*?)__/gmi;
+		return /[_{]{2}(.*?)[}_]{2}/gmi;
 	}
 
 	// Instance methods.
