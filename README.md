@@ -13,22 +13,31 @@ Navigate to your project and run the following command:
 
 The `PathMap` constructor accepts a single object argument: `paths`. The `paths` object may have any number of keys, so long as the value of each key is of type `String`.
 
-`const PATHS = new PathMap( {
+```
+const PATHS = new PathMap( {
 	src: './src',
 	dist: './dist'
-} );`
+} );
+```
 
-Each key on the `paths` object is transferred to the new `PathMap` instance, and can be accessed using either `.` or `[]` notation. Each valid value within the `paths` object which *DOES NOT* include a placeholder will be transferred to the `PathMap` instance verbatim/without transformation.
+Each key on the `paths` object is transferred to the new `PathMap` instance, and can be accessed using either `.` or `[]` notation. Each valid value within the `paths` object which *does not* include a placeholder will be transferred to the `PathMap` instance verbatim/without transformation.
 
-`console.log( PATHS.src ); // './src'`
-`console.log( PATHS[ 'dist' ] ); // './dist'`
+```
+console.log( PATHS.src ); // './src'
 
-Any substrings within the `places` object that are surrounded by `__` characters are considered to be "placeholders". During instantiation, `PathMap` checks the placeholder value(s) against its own keys, and replaces them with the corresponding values if possible.
+console.log( PATHS[ 'dist' ] ); // './dist'
+```
 
-`const PATHS = new PathMap( {
+Any substrings within the `paths` object that are surrounded by either `__...__` or `{{...}}` characters are considered to be "placeholders". During instantiation, `PathMap` checks the placeholder value(s) against its own keys, and replaces them with the corresponding values if possible.
+
+```
+const PATHS = new PathMap( {
 	src: './src',
 	dist: './dist',
-	styles: '__src__/styles'
-} );`
+	styles: '__src__/styles',
+	scripts: '{{src}}/scripts'
+} );
 
-`console.log( PATHS.styles ); // './src/styles'`
+console.log( PATHS.styles ); // './src/styles'
+console.log( PATHS.scripts ); // './src/scripts'
+```
