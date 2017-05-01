@@ -1,6 +1,6 @@
 {
   "name": "sfco-path-map",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "PathMap reduces redundancy when declaring path and configuration objects.",
   "main": "lib/path-map.js",
   "scripts": {
