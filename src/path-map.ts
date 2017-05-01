@@ -1,5 +1,5 @@
 // DECLARE CLASSES
-class PathMap {
+export class PathMap {
 	// Class methods.
 	static get pattern() {
 		return /__(.*?)__/gmi;
@@ -35,6 +35,3 @@ class PathMap {
 		return PathMap.pattern.exec( placeholder )[ 1 ] || '';
 	}
 }
-
-// PUBLIC API
-module.exports = PathMap;
