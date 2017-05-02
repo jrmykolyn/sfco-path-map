@@ -16,7 +16,7 @@ class PathMap {
 				let isArr = Array.isArray( val );
 
 				// Re-assign `val` to ensure that it's an array.
-				val = ( val && typeof val === 'string' ) ? [ val ] : val
+				val = ( isArr ) ? val : [ val ];
 
 				// Parse each string within the `val` array.
 				val = val.map( ( v ) => { return this.parsePath( v ) } );
