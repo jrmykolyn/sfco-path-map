@@ -62,7 +62,7 @@ describe( 'Test `PathMap`:', () => {
 				path4: true
 			} );
 
-			PATHS.path5 = 'Hello, world!'; /// NOTE - Additional assignment included to prevent ESLint "assigned but not used" flag.
+			PATHS.hello = 'World!'; /// NOTE - Additional assignment included to prevent ESLint "assigned but not used" flag.
 		} catch ( err ) {
 			expect( err instanceof Error ).toBe( true );
 		}
@@ -91,5 +91,25 @@ describe( 'Test `PathMap`:', () => {
 		} );
 
 		expect( PATHS.scriptsSrc[ 0 ] ).toBe( 'path/to/project/js/src/*.js' );
+	} );
+
+	it( 'Should allow the keys on the `paths` argument to be provided "out of order".', () => {
+		const PATHS = new PathMap( {
+			scripts: '{{src}}/scripts',
+			src: './src'
+		} );
+
+		expect( PATHS.scripts ).toBe( './src/scripts' );
+	} );
+
+	it( 'Should allow for multiple placeholders within a single value.', () => {
+		const PATHS = new PathMap( {
+			src: './src',
+			vendorDir: 'vendor',
+			scripts: '{{src}}/scripts',
+			vendorScripts: '{{scripts}}/{{vendor}}'
+		} );
+
+		expect( PATHS.vendorScripts ).toBe( './src/scripts/vendor' );
 	} );
 } );
