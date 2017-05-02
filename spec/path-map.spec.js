@@ -112,4 +112,18 @@ describe( 'Test `PathMap`:', () => {
 
 		expect( PATHS.vendorScripts ).toBe( './src/scripts/vendor' );
 	} );
+
+	/// TODO[@jrmykolyn] - Ensure that test fails (as expected) before implementing fix/feature.
+	it( 'Should throw an error if the same placeholder is used multiple times within a single value.', () => {
+		try {
+			const PATHS = new PathMap( {
+				src: './src',
+				test: '{{src}}/{{src}}',
+			} );
+
+			PATHS.hello = 'World!'; /// NOTE - Additional assignment included to prevent ESLint "assigned but not used" flag.
+		} catch ( err ) {
+			expect( err instanceof Error ).toBe( true );
+		}
+	} );
 } );
