@@ -68,7 +68,7 @@ describe( 'Test `PathMap`:', () => {
 		}
 	} );
 
-	it( 'It should *not* throw an error if the value for a given path is of type Array<string>.', () => {
+	it( 'Should *not* throw an error if the value for a given path is of type Array<string>.', () => {
 		const PATHS = new PathMap( {
 			path1: './path-1',
 			path2: [
@@ -80,7 +80,7 @@ describe( 'Test `PathMap`:', () => {
 		expect( Array.isArray( PATHS.path2 ) ).toBe( true );
 	} );
 
-	it( 'It should correctly replace placeholder values within an array of strings.', () => {
+	it( 'Should correctly replace placeholder values within an array of strings.', () => {
 		const PATHS = new PathMap( {
 			projectRoot: 'path/to/project',
 			scriptsSrc: [
